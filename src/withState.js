@@ -9,6 +9,7 @@ import createEagerFactory from './createEagerFactory';
 const withState = (stateName, stateUpdaterName, initialState) =>
   BaseComponent => {
     const factory = createEagerFactory(BaseComponent);
+
     return class extends Component {
       state = {
         stateValue: typeof initialState === 'function'

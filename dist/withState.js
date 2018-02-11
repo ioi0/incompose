@@ -33,6 +33,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var withState = function withState(stateName, stateUpdaterName, initialState) {
   return function (BaseComponent) {
     var factory = (0, _createEagerFactory2.default)(BaseComponent);
+
     return function (_Component) {
       _inherits(_class2, _Component);
 

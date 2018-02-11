@@ -1469,7 +1469,7 @@ doctrine@1.5.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-doctrine@^2.0.0, doctrine@^2.1.0:
+doctrine@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
   dependencies:
@@ -1567,11 +1567,11 @@ eslint-plugin-import@^2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-inferno@^7.4.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-inferno/-/eslint-plugin-inferno-7.4.0.tgz#d9ba628f810b5ddf6c1b6a51e013817defacc044"
+eslint-plugin-inferno@^7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-inferno/-/eslint-plugin-inferno-7.6.0.tgz#a7a1b6bcf5602cb6c455fa7c4bb0ce316a9d26ea"
   dependencies:
-    doctrine "^2.0.0"
+    doctrine "^2.1.0"
     has "^1.0.1"
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.0"
@@ -2147,21 +2147,21 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
-inferno-compat@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/inferno-compat/-/inferno-compat-4.0.0.tgz#01ad9cca5e9664493a342689e7a209e979f27e37"
+inferno-compat@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/inferno-compat/-/inferno-compat-4.0.2.tgz#cb56911ef7fda517bba27496c701987134f675ba"
   dependencies:
-    inferno "4.0.0"
+    inferno "4.0.2"
 
-inferno-vnode-flags@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-4.0.0.tgz#77c6c1b162c1c9b16affa255ed70b256797521be"
+inferno-vnode-flags@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-4.0.2.tgz#e592968051aa8674f357d519eb65386cef58a650"
 
-inferno@4.0.0, inferno@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/inferno/-/inferno-4.0.0.tgz#fcc5eb223342f785c7441c577a0ff8b010ac8f72"
+inferno@4.0.2, inferno@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/inferno/-/inferno-4.0.2.tgz#122557a71724fa347af534569144c81be9a637b6"
   dependencies:
-    inferno-vnode-flags "4.0.0"
+    inferno-vnode-flags "4.0.2"
     opencollective "^1.0.3"
 
 inflight@^1.0.4:
