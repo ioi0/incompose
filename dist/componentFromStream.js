@@ -7,9 +7,7 @@ exports.componentFromStreamWithConfig = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _infernoComponent = require('inferno-component');
-
-var _infernoComponent2 = _interopRequireDefault(_infernoComponent);
+var _inferno = require('inferno');
 
 var _changeEmitter = require('change-emitter');
 
@@ -110,7 +108,7 @@ var componentFromStreamWithConfig = exports.componentFromStreamWithConfig = func
       }]);
 
       return ComponentFromStream;
-    }(_infernoComponent2.default);
+    }(_inferno.Component);
   };
 };
 

@@ -2,7 +2,7 @@
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
-import Component from 'inferno-component';
+import { Component } from 'inferno';
 import { createChangeEmitter } from 'change-emitter';
 import $$observable from 'symbol-observable';
 import { config as globalConfig } from './setObservableConfig';

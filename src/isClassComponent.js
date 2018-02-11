@@ -2,7 +2,7 @@
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
-import Component from 'inferno-component';
+import { Component } from 'inferno';
 
 const isClassComponent = ComponentArg => Boolean(
   ComponentArg &&

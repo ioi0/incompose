@@ -2,7 +2,7 @@
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
-import Component from 'inferno-component';
+import { Component } from 'inferno';
 import pick from './utils/pick';
 import shallowEqual from './shallowEqual';
 import createHelper from './createHelper';

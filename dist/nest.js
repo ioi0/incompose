@@ -16,8 +16,6 @@ var _inferno2 = _interopRequireDefault(_inferno);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var createVNode = _inferno2.default.createVNode;
-
 exports.default = function () {
   for (var _len = arguments.length, Components = Array(_len), _key = 0; _key < _len; _key++) {
     Components[_key] = arguments[_key];
@@ -37,7 +35,7 @@ exports.default = function () {
       var nextProps = props;
 
       if (PrevComponent !== null) {
-        nextProps.children = createVNode(16, PrevComponent, null, null, _extends({}, nextProps));
+        nextProps.children = (0, _inferno.normalizeProps)((0, _inferno.createComponentVNode)(2, PrevComponent, _extends({}, nextProps)));
       }
 
       return nextProps;

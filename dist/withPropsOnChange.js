@@ -8,9 +8,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _infernoComponent = require('inferno-component');
-
-var _infernoComponent2 = _interopRequireDefault(_infernoComponent);
+var _inferno = require('inferno');
 
 var _pick = require('./utils/pick');
 
@@ -77,7 +75,7 @@ var withPropsOnChange = function withPropsOnChange(shouldMapOrKeys, propsMapper)
       }]);
 
       return _class2;
-    }(_infernoComponent2.default);
+    }(_inferno.Component);
   };
 };
 
