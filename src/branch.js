@@ -2,8 +2,8 @@
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
+import compose from './compose';
 import createHelper from './createHelper';
-import createEagerFactory from './createEagerFactory';
 
 const identity = Component => Component;
 
@@ -12,10 +12,10 @@ const branch = (test, left, right = identity) => BaseComponent => {
   let rightFactory;
   return props => {
     if (test(props)) {
-      leftFactory = leftFactory || createEagerFactory(left(BaseComponent));
+      leftFactory = leftFactory || compose(left)(BaseComponent);
       return leftFactory(props);
     }
-    rightFactory = rightFactory || createEagerFactory(right(BaseComponent));
+    rightFactory = rightFactory || compose(right)(BaseComponent);
     return rightFactory(props);
   };
 };

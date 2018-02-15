@@ -4,10 +4,8 @@
 
 import { createClass } from 'inferno-compat';
 import createHelper from './createHelper';
-import createEagerFactory from './createEagerFactory';
 
 const lifecycle = spec => BaseComponent => {
-  const factory = createEagerFactory(BaseComponent);
 
   if (
     process.env.NODE_ENV !== 'production' &&
@@ -23,10 +21,11 @@ const lifecycle = spec => BaseComponent => {
   return createClass({
     ...spec,
     render() {
-      return factory({
-        ...this.props,
-        ...this.state
-      });
+      return (
+        <BaseComponent {
+          ...Object.assign(...this.props, ...this.state)
+        } />
+      );
     }
   });
   /* eslint-enable react/prefer-es6-class */

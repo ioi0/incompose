@@ -4,12 +4,9 @@
 
 import { Component } from 'inferno';
 import createHelper from './createHelper';
-import createEagerFactory from './createEagerFactory';
 
 const withState = (stateName, stateUpdaterName, initialState) =>
   BaseComponent => {
-    const factory = createEagerFactory(BaseComponent);
-
     return class extends Component {
       state = {
         stateValue: typeof initialState === 'function'
@@ -26,11 +23,16 @@ const withState = (stateName, stateUpdaterName, initialState) =>
       );
 
       render() {
-        return factory({
-          ...this.props,
-          [stateName]: this.state.stateValue,
-          [stateUpdaterName]: this.updateStateValue
-        });
+        return (
+          <BaseComponent {
+            ...Object.assign(
+              this.props, {
+                [stateName]: this.state.stateValue,
+                [stateUpdaterName]: this.updateStateValue
+              }
+            )
+          } />
+        );
       }
     };
   };

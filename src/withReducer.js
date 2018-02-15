@@ -5,11 +5,9 @@
 
 import { Component } from 'inferno';
 import createHelper from './createHelper';
-import createEagerFactory from './createEagerFactory';
 
 const withReducer = (stateName, dispatchName, reducer, initialState) =>
   BaseComponent => {
-    const factory = createEagerFactory(BaseComponent);
     return class extends Component {
       state = {
         stateValue: this.initializeStateValue()
@@ -29,11 +27,16 @@ const withReducer = (stateName, dispatchName, reducer, initialState) =>
       }));
 
       render() {
-        return factory({
-          ...this.props,
-          [stateName]: this.state.stateValue,
-          [dispatchName]: this.dispatch
-        });
+        return (
+          <BaseComponent {
+            ...Object.assign(
+              this.props, {
+                [stateName]: this.state.stateValue,
+                [dispatchName]: this.dispatch
+              }
+            )
+          } />
+        );
       }
     };
   };

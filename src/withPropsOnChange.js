@@ -6,10 +6,8 @@ import { Component } from 'inferno';
 import pick from './utils/pick';
 import shallowEqual from './shallowEqual';
 import createHelper from './createHelper';
-import createEagerFactory from './createEagerFactory';
 
 const withPropsOnChange = (shouldMapOrKeys, propsMapper) => BaseComponent => {
-  const factory = createEagerFactory(BaseComponent);
   const shouldMap = typeof shouldMapOrKeys === 'function'
     ? shouldMapOrKeys
     : (props, nextProps) => !shallowEqual(
@@ -27,10 +25,14 @@ const withPropsOnChange = (shouldMapOrKeys, propsMapper) => BaseComponent => {
     }
 
     render() {
-      return factory({
-        ...this.props,
-        ...this.computedProps
-      });
+      return (
+        <BaseComponent {
+          ...Object.assign(
+            this.props,
+            this.computedProps
+          )
+        } />
+      );
     }
   };
 };
