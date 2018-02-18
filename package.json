@@ -29,7 +29,8 @@
     "prepublish": "npm run build",
     "lint": "eslint src/**",
     "cspell": "cspell src/**/*.js tests/**/*.js docs/**/*.md --config ./cSpell.json",
-    "ci": "npm run test && npm run lint && npm run cspell"
+    "ci": "npm run test && npm run lint && npm run cspell",
+    "prettier": "./node_modules/.bin/prettier --write './!(dist|.vscode)/**/*.js'"
   },
   "dependencies": {
     "change-emitter": "^0.1.6",
@@ -47,7 +48,8 @@
     "eslint": "^4.17.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-inferno": "^7.6.0",
-    "jest": "^22.2.2"
+    "jest": "^22.2.2",
+    "prettier": "^1.10.2"
   },
   "contributors": [
     {
