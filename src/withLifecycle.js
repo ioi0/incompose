@@ -2,7 +2,7 @@
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
-import { createClass } from 'inferno-compat';
+import { createClass } from 'inferno-create-class';
 import createHelper from './createHelper';
 
 const lifecycle = spec => BaseComponent => {
@@ -22,9 +22,7 @@ const lifecycle = spec => BaseComponent => {
     ...spec,
     render() {
       return (
-        <BaseComponent {
-          ...Object.assign(...this.props, ...this.state)
-        } />
+        <BaseComponent {...this.props} />
       );
     }
   });

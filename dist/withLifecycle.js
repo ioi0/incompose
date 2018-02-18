@@ -1,12 +1,9 @@
 import { createComponentVNode, normalizeProps } from 'inferno';
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 /**
  * @author recompose (https://github.com/acdlite/recompose)
  */
 
-import { createClass } from 'inferno-compat';
+import { createClass } from 'inferno-create-class';
 import createHelper from './createHelper';
 
 var lifecycle = function lifecycle(spec) {
@@ -19,7 +16,7 @@ var lifecycle = function lifecycle(spec) {
     /* eslint-disable react/prefer-es6-class */
     return createClass(Object.assign({}, spec, {
       render: function render() {
-        return normalizeProps(createComponentVNode(2, BaseComponent, Object.assign({}, Object.assign.apply(Object, _toConsumableArray(this.props).concat(_toConsumableArray(this.state))))));
+        return normalizeProps(createComponentVNode(2, BaseComponent, Object.assign({}, this.props)));
       }
     }));
     /* eslint-enable react/prefer-es6-class */

@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Update
 - incompose is now ready for inferno `^4.0`
 - updated all dependencies
+- removed `inferno-compat` as dependency
+- added `inferno-create-class` as dependency
 - use node `9.5.0` internally
 
 ## [1.1.0] - 2017-08-07

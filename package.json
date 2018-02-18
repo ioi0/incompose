@@ -34,7 +34,7 @@
   "dependencies": {
     "change-emitter": "^0.1.6",
     "inferno": "^4.0.2",
-    "inferno-compat": "^4.0.2",
+    "inferno-create-class": "^4.0.3",
     "symbol-observable": "^1.2.0"
   },
   "devDependencies": {
