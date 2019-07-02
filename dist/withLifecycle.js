@@ -14,7 +14,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  */
 var _default = function _default(lifecycles) {
   return function (Component) {
-    Component.defaultHooks = _objectSpread({}, lifecycles);
+    // avoid breaking changes by mapping class lifecycles to functional lifecycles
+    var functionalLifecycles = {};
+
+    if (lifecycles.componentWillMount) {
+      functionalLifecycles.onComponentWillMount = lifecycles.componentWillMount;
+    }
+
+    if (lifecycles.componentDidMount) {
+      functionalLifecycles.onComponentDidMount = lifecycles.componentDidMount;
+    }
+
+    if (lifecycles.shouldComponentUpdate) {
+      functionalLifecycles.onComponentShouldUpdate = lifecycles.shouldComponentUpdate;
+    }
+
+    if (lifecycles.componentWillUpdate) {
+      functionalLifecycles.onComponentWillUpdate = lifecycles.componentWillUpdate;
+    }
+
+    if (lifecycles.componentDidUpdate) {
+      functionalLifecycles.onComponentDidUpdate = lifecycles.componentDidUpdate;
+    }
+
+    if (lifecycles.componentWillUnmount) {
+      functionalLifecycles.onComponentWillUnmount = lifecycles.componentWillUnmount;
+    }
+
+    Component.defaultHooks = _objectSpread({}, functionalLifecycles);
     return Component;
   };
 };
