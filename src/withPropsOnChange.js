@@ -6,6 +6,7 @@ import { Component } from 'inferno';
 import pick from './utils/pick';
 import shallowEqual from './shallowEqual';
 import createHelper from './createHelper';
+import wrapClassComponent from './wrapClassComponent';
 
 const withPropsOnChange = (shouldMapOrKeys, propsMapper) => BaseComponent => {
 	const shouldMap =
@@ -17,7 +18,7 @@ const withPropsOnChange = (shouldMapOrKeys, propsMapper) => BaseComponent => {
 						pick(nextProps, shouldMapOrKeys),
 					);
 
-	return class extends Component {
+	return wrapClassComponent(class extends Component {
 		computedProps = propsMapper(this.props);
 
 		componentWillReceiveProps(nextProps) {
@@ -31,7 +32,7 @@ const withPropsOnChange = (shouldMapOrKeys, propsMapper) => BaseComponent => {
 				<BaseComponent {...Object.assign(this.props, this.computedProps)} />
 			);
 		}
-	};
+	});
 };
 
 export default createHelper(withPropsOnChange, 'withPropsOnChange');

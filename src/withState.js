@@ -4,13 +4,14 @@
 
 import { Component } from 'inferno';
 import createHelper from './createHelper';
+import wrapClassComponent from './wrapClassComponent';
 
 const withState = (
 	stateName,
 	stateUpdaterName,
 	initialState,
 ) => BaseComponent => {
-	const StatedComponent = class extends Component {
+	return wrapClassComponent(class extends Component {
 		state = {
 			stateValue:
 				typeof initialState === 'function'
@@ -37,8 +38,7 @@ const withState = (
 				/>
 			);
 		}
-	};
-	return props => <StatedComponent {...props} />;
+	});
 };
 
 export default createHelper(withState, 'withState');

@@ -6,9 +6,10 @@ import { Component } from 'inferno';
 import { createChangeEmitter } from 'change-emitter';
 import $$observable from 'symbol-observable';
 import { config as globalConfig } from './setObservableConfig';
+import wrapClassComponent from './wrapClassComponent';
 
 export const componentFromStreamWithConfig = config => propsToVdom =>
-	class ComponentFromStream extends Component {
+	wrapClassComponent(class ComponentFromStream extends Component {
 		state = { vdom: null };
 
 		propsEmitter = createChangeEmitter();
@@ -63,7 +64,7 @@ export const componentFromStreamWithConfig = config => propsToVdom =>
 		render() {
 			return this.state.vdom;
 		}
-	};
+	});
 
 const componentFromStream = propsToVdom =>
 	componentFromStreamWithConfig(globalConfig)(propsToVdom);

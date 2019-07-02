@@ -4,6 +4,7 @@
 
 import { Component } from 'inferno';
 import createHelper from './createHelper';
+import wrapClassComponent from './wrapClassComponent';
 
 const withReducer = (
 	stateName,
@@ -11,7 +12,7 @@ const withReducer = (
 	reducer,
 	initialState,
 ) => BaseComponent => {
-	return class extends Component {
+  return wrapClassComponent(class extends Component {
 		state = {
 			stateValue: this.initializeStateValue(),
 		};
@@ -40,7 +41,7 @@ const withReducer = (
 				/>
 			);
 		}
-	};
+	});
 };
 
 export default createHelper(withReducer, 'withReducer');

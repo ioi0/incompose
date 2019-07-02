@@ -4,6 +4,7 @@
 
 import { createClass } from 'inferno-create-class';
 import createHelper from './createHelper';
+import wrapClassComponent from './wrapClassComponent';
 
 const lifecycle = spec => BaseComponent => {
 	if (process.env.NODE_ENV !== 'production' && spec.render) {
@@ -13,12 +14,12 @@ const lifecycle = spec => BaseComponent => {
 		);
 	}
 
-	return createClass({
+	return wrapClassComponent(createClass({
 		...spec,
 		render() {
 			return <BaseComponent {...this.props} />;
 		},
-	});
+	}));
 };
 
 export default createHelper(lifecycle, 'lifecycle');
